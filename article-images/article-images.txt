@@ -1,0 +1,104 @@
+IMAGENS PARA ARTIGO - SPATIAL ACOUSTIC LEARNING
+
+1. PROBLEMA INICIAL (Imagens 01-03)
+   01_exploracao_inicial_template_anatomico.png
+   - Mostra primeira tentativa com templates anatômicos
+   - Destacar: complexidade de segmentar regiões específicas
+   - Dados: "Tentativa inicial com templates geométricos fixos"
+
+   02_analise_percentis_deteccao_orelhas.png
+   - Descoberta fundamental: percentis laterais para detecção
+   - Destacar: 5% funciona melhor que outros valores
+   - Dados: "5% captura ~6-7k pontos, 15% captura cabeça inteira"
+
+   03_fase1_metodos_geometricos_80pct_erro.png
+   - Resultados iniciais frustrantes
+   - Destacar: 80.9% erro médio, apenas 2% das medidas <20% erro
+   - Dados: "Métodos puramente geométricos são insuficientes"
+
+2. EVOLUÇÃO DA SOLUÇÃO (Imagens 04-06)
+   04_extracao_mesh_analise_r2_071.png
+   - Progresso com extração direta de medidas
+   - Destacar: R²=0.71 mostra correlação promissora
+   - Dados: "x1, x2, x3 bem extraídos, d5-d6 desafiadores"
+
+   05_v13_comparacao_final_137pct_erro.png
+   - Versão V13 com melhorias incrementais
+   - Destacar: redução para 13.7% erro médio
+   - Dados: "Melhoria de 80% → 13.7% com refinamentos"
+
+   06_spatial_v1_hibrido_reducao_69pct.png
+   - Breakthrough com abordagem híbrida
+   - Destacar: combina V13 (cabeça) + V9 (orelhas)
+   - Dados: "Redução de 69% no erro, d5: 102%→27%"
+
+3. SOLUÇÃO RIDGE (Imagens 07-08)
+   07_ridge_hrtf_analise_completa_6k_pontos.png
+   - Ridge extractor com ~6000 pontos por orelha
+   - Destacar: detecção robusta e consistente
+   - Dados: "5% percentil lateral, 40% altura central"
+
+   08_anatomia_orelha_helix_antihelix.png
+   - Validação anatômica da detecção
+   - Destacar: identifica corretamente helix, antihelix
+   - Dados: "Análise estatística confirma regiões anatômicas"
+
+4. PIPELINE FOTOGRAMETRIA (Imagens 09-12)
+   09_fotogrametria_hrtf_predicao_completa.png
+   - Pipeline completo mesh → HRTF
+   - Destacar: HRTFs preditos vs ground truth
+   - Dados: "SD = 2.46 dB, OOB Score = 0.553"
+
+   10_alinhamento_blender_185pct_erro.png
+   - Desafios de alinhamento de meshes
+   - Destacar: importância da orientação correta
+   - Dados: "Erro reduzido de 105% → 18.5% após alinhamento"
+
+   11_comparacao_colmap_hutubs_38pct.png
+   - Fotogrametria vs scanner profissional
+   - Destacar: 38% erro é aceitável para aplicações
+   - Dados: "HUTUBS: 18.7%, COLMAP: 38.0%"
+
+   12_generalizacao_multiplos_subjects.png
+   - Teste em inicial 8 subjects diferentes, depois em todas as meshes hutubs que são 59 dos 96
+   - Destacar: método generaliza bem
+   - Dados: "Erro médio 17.9% com 5% percentil"
+
+5. RESULTADOS FINAIS (Imagens 13-15)
+   13_ridge_v2_pipeline_completo.png
+   - Pipeline completo do processo
+   - Destacar: mesh → medidas → features → HRTF
+   - Dados: "7 medidas diretas → 23 features" (já sem cabeça + torso)
+
+   14_fase4_resultados_finais_r2_896.png
+   - Conquista final: R² = 89.6%
+   - Destacar: pronto para publicação
+   - Dados: "Apenas 0.7pp abaixo do "ground truth" do original (90.2%)" vlw frequency
+
+   15_ear_study_v9_deteccao_final.png
+   - Versão final otimizada da detecção
+   - Destacar: robustez e precisão
+   - Dados: "Paciência esgotada, está bom o bastante"
+
+=== DADOS TÉCNICOS PARA COMENTÁRIOS ===
+
+MÉTRICAS PRINCIPAIS:
+- Erro inicial: 80.9% (métodos geométricos)
+- Erro V13: 13.7% (extração direta)
+- Erro Spatial V1: 22.3% (híbrido)
+- Erro Ridge HUTUBS: 18.7%
+- Erro Ridge Fotogrametria: 38.0%
+- R² final: 89.6% (vs 90.2% ground truth)
+
+PARÂMETROS OTIMIZADOS:
+- Percentil lateral: 5% (3-4% para fotogrametria)
+- Filtro altura: 40% região central
+- Outliers: 2σ desvio padrão
+- Pontos mínimos: 50 por orelha
+
+TECNOLOGIAS:
+- Scanner: HUTUBS (141k vértices)
+- Fotogrametria: COLMAP (284k vértices)
+- ML: Random Forest (100 estimadores)
+- Validação: OOB (Out-of-Bag)
+
