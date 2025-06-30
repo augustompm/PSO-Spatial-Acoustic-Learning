@@ -9,14 +9,14 @@
 
   ## Structure
 
-  1-hrtf_prediction-V3.ipynb          # Baseline HRTF prediction with full anthropometric data
-  2-ridge_hrtf_prediction_V2.1.ipynb  # Automatic feature extraction from 3D meshes
-  3-photo_hrtf_prediction.ipynb      # Validation with photogrammetric reconstruction
-  data/                               # HUTUBS dataset (meshes, SOFA files, measurements)*
-  blender/                            # 3D reconstruction files
-  documentation/                      # Articles
-  article-images/                     # Additional visualizations
-  images/                             # Logo (not used)
+  1-hrtf_prediction-V3.ipynb          # Baseline HRTF prediction with full anthropometric data <br/>
+  2-ridge_hrtf_prediction_V2.1.ipynb  # Automatic feature extraction from 3D meshes <br/>
+  3-photo_hrtf_prediction.ipynb      # Validation with photogrammetric reconstruction <br/>
+  data/                               # HUTUBS dataset (meshes, SOFA files, measurements)* <br/>
+  blender/                            # 3D reconstruction files <br/>
+  documentation/                      # Articles <br/>
+  article-images/                     # Additional visualizations <br/>
+  images/                             # Logo (not used) <br/>
 
 *aditional HUTUBS PLY (3D models) data avaliable at [https://sofacoustics.org/data/database/hutubs/]([URL](https://sofacoustics.org/data/database/hutubs/))
 
