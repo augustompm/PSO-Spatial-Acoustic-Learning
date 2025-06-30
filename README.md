@@ -15,7 +15,7 @@
   
   ├── 3-photo_hrtf_prediction.ipynb      # Validation with photogrammetric reconstruction
   
-  ├── data/                               # HUTUBS dataset (meshes, SOFA files, measurements)
+  ├── data/                               # HUTUBS dataset (meshes, SOFA files, measurements)*
   
   ├── blender/                            # 3D reconstruction files
   
@@ -24,6 +24,8 @@
   ├── article-images/                     # Additional visualizations
   
   └── images/                             # Logo (not used)
+
+*aditional HUTUBS PLY (3D models) data avaliable at [https://sofacoustics.org/data/database/hutubs/]([URL](https://sofacoustics.org/data/database/hutubs/))
 
   ## Key Results
 
